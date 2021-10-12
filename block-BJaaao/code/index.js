@@ -61,9 +61,9 @@ Profession: ${userProfession}`);
   - Log using console.log [numA - numB]
   - Log using console.log [numA * numB]
 */
-let numA = prompt(`Enter 1st value`);
-let numB = prompt(`Enter 2nd value`);
-alert (`${numA - numB}`);
-alert (`${numA * numB}`);
-console.log (`${numA - numB}`);
-console.log (`${numA * numB}`);
+let numA = Number(prompt(`Enter 1st value`));
+let numB = Number(prompt(`Enter 2nd value`));
+alert (numA - numB);
+alert (numA * numB);
+console.log (numA - numB);
+console.log (numA * numB);
