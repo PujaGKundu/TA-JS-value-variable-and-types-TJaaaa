@@ -37,45 +37,45 @@ numA > numB ? alert (`${numA} is larger.`) : alert (`${numB} is larger.`);
   - `else` print the message " All men must die"
 */
 let houseName = prompt("Enter a house name: ");
-if (houseName = "stark") {
+if (houseName === "stark") {
   alert (`Winter is coming`);
-} else if (houseName = "lannister") {
+} else if (houseName === "lannister") {
   alert (`A lannister always pays his debt`);
 } else {
   alert (`All men must die`);
 
 // 5. Convert the above code using`?` terniary operator
 let houseName = prompt("Enter a house name: ");
-houseName = "stark" ? alert (`Winter is coming`) : houseName = "lannister" ? alert (`A lannister always pays his debt`) : alert (`All men must die`);
+houseName === "stark" ? alert (`Winter is coming`) : houseName === "lannister" ? alert (`A lannister always pays his debt`) : alert (`All men must die`);
 
 // Switch
 
 // 6. Write a program that takes the number of the month(1 - 12) and alert number of days in the month.
-let num = Number(prompt("Enter a number: "));
-switch(num){
-  case 1 : alert ("January");
+let month = Number(prompt("Enter a number: "));
+switch(month){
+  case 1 : alert ("There are 31 days");
   break;
-  case 2 : alert ("Feburary");
+  case 2 : alert ("There are 28 days");
   break;
-  case 3 : alert ("March");
+  case 3 : alert ("There are 31 days");
   break;
-  case 4 : alert ("April");
+  case 4 : alert ("There are 30 days");
   break;
-  case 5 : alert ("May");
+  case 5 : alert ("There are 31 days");
   break;
-  case 6 : alert ("June");
+  case 6 : alert ("There are 30 days");
   break;
-  case 7 : alert ("July");
+  case 7 : alert ("There are 31 days");
   break;
-  case 8 : alert ("August");
+  case 8 : alert ("There are 31 days");
   break;
-  case 9 : alert ("September");
+  case 9 : alert ("There are 30 days");
   break;
-  case 10 : alert ("October");
+  case 10 : alert ("There are 31 days");
   break;
-  case 11: alert ("November");
+  case 11: alert ("There are 30 days");
   break;
-  case 12 : alert ("December");
+  case 12 : alert ("There are 31 days");
   break;
   default : alert ("Wrong input");
 }
@@ -88,12 +88,18 @@ switch(num){
 
 */
 let salary = Number(prompt("Enter your salary: "));
-switch(salary){
-  case salary <= 20000 : alert (`${salary - 10%}`);
+switch(true){
+  case salary <= 20000 : 
+  let tax = (salary * 10) / 100;
+  alert (`Your in-hand amount is ${salary - tax}`);
   break;
-  case salary <= 40000 : alert (`${salary - 20%}`);
+  case salary <= 40000 : 
+  let tax = (salary * 20) / 100;
+  alert (`Your in-hand amount is ${salary - tax}`);
   break;
-  case salary > 50000 : alert (`${salary - 30%}`);
+  case salary > 50000 : 
+  let tax = (salary * 30) / 100;
+  alert (`Your in-hand amount is ${salary - tax}`);
   break;
   default : alert("Wrong Input");
 }
@@ -128,7 +134,7 @@ if (marks > 100) {
 }
 
 
-switch(num){
+switch(true){
   case marks > 100 : alert ("Marks can't be greater than 100");
   break;
   case marks > 80 && marks < 100 : alert ("Grade A");
@@ -172,13 +178,13 @@ if (weather = "sunny") {
 
 
 switch(weather){
-  case weather = "sunny" : alert ("Wear a T-shirt");
+  case "sunny" : alert ("Wear a T-shirt");
   break;
-  case weather = "rainy" : alert ("Don't forget to take your raincoat");
+  case "rainy" : alert ("Don't forget to take your raincoat");
   break;
-  case weather = "hot" : alert ("Get a hanky");
+  case "hot" : alert ("Get a hanky");
   break;
-  case weather = "freezing" : alert ("Get your sweeter on");
+  case "freezing" : alert ("Get your sweeter on");
   break;
   default : alert ("Not a Valid Input");
 }
