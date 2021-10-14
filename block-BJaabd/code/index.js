@@ -11,12 +11,12 @@ Write a program that asks the user his/her age and check for the following condi
 👇
 */
 
-let age = +prompt(`Enter your age: `);
+let age = Number(prompt(`Enter your age: `));
 if (age < 4){
   alert(" Hey Kiddo! Can You Walk ?");
-}else if(age >= 4 || age <= 11){
+}else if(age >= 4 && age <= 11){
   alert(" You are too young to participate in the marathon");
-}else if(age >= 12 || age <= 55){
+}else if(age >= 12 && age <= 55){
   alert("You can participate in the marathon");
 }else if(age > 55){
   alert(" You are too old to participate in the marthon");
@@ -35,14 +35,14 @@ n = 7 => output: heeeeeeello
 */
 // [Your code goes here]
 
-let positiveInteger = +prompt("Enter a positive integer");
-let totalE = "";
-for (let i = 1; i <= positiveInteger; i++){
-  totalE = totalE + "e";
+let count = +prompt("Enter the number of e!");
+const start = "h";
+const end = "llo";
+let middle = "";
+for (let i = 0; i < count; i++){
+  middle += "e";
 }
-alert("h" + totalE + "llo");
-
-
+alert(start + middle + end);
 
 /*
 Program to calculate the sum of first n natural numbers(1,2,3...n are known as natural numbers). Prompt user to enter n (using `prompt`) then based on input provided calculate and show result in `alert`.
@@ -51,8 +51,8 @@ Program to calculate the sum of first n natural numbers(1,2,3...n are known as n
 // [Your code goes here]
 let n = +prompt("Enter a number: ");
 let sum = 0;
-for (let i = 0; i <= n; i++){
-  sum =+i;
+for (let i = 1; i <= n; i++){
+  sum += i;
 }
 alert("Sum of first " + n + "natural numbers are " + sum);
 
@@ -121,19 +121,19 @@ let marks = +prompt("Enter your marks(0-100): ");
 switch(true){
   case marks > 90 : alert("AA");
   break;
-  case marks > 80 || marks <= 90 : alert("Your grade is AB");
+  case marks > 80 && marks <= 90 : alert("Your grade is AB");
   break;
-  case marks > 70 || marks <= 80 : alert("Your grade is BB");
+  case marks > 70 && marks <= 80 : alert("Your grade is BB");
   break;
-  case marks > 60 || marks <= 70 : alert("Your grade is BC");
+  case marks > 60 && marks <= 70 : alert("Your grade is BC");
   break;
-  case marks > 50 || marks <= 60 : alert("Your grade is CC");
+  case marks > 50 && marks <= 60 : alert("Your grade is CC");
   break;
-  case marks > 40 || marks <= 50 : alert("Your grade is CD");
+  case marks > 40 && marks <= 50 : alert("Your grade is CD");
   break;
-  case marks > 30 || marks <= 40 : alert("Your grade is DD");
+  case marks > 30 && marks <= 40 : alert("Your grade is DD");
   break;
-  case marks >= 30 : alert("Your grade is FF");
+  case marks <= 30 : alert("Your grade is FF");
   break;
   default : alert("Wrong entry");
 }
@@ -164,8 +164,15 @@ if (num1 > num2){
 🎖Write a JavaScript conditional statement to find the sign (+, -) of product of three numbers. Take those three numbers from user using `prompt`. Display an alert box with the specified sign.
 */
 // [Your code goes here]
-
-
+let num1 = +prompt("Enter first number: ");
+let num2 = +prompt("Enter second number: ");
+let num3 = +prompt("Enter third number: ");
+let product = num1 * num2 * num3;
+if(product > 0){
+  alert(`The final value is positive`);
+}else{
+  alert(`The final value is negative`);
+}
 
 
 
@@ -191,24 +198,25 @@ let num2 = +prompt("Enter second number: ");
 let result = 0;
 let operator = prompt("Enter an operator such as Add, Mul, Div, Sub: ");
 switch(operator){
-  case Add : result = num1 + num2;
+  case "Add" : result = num1 + num2;
   alert(`Addition of ${num1} and ${num2} is ${result}`);
   break;
-  case Mul : result = num1 * num2;
+  case "Mul" : result = num1 * num2;
   alert(`Multiplication of ${num1} and ${num2} is ${result}`);
   break;
-  case Div : if(num1 > num2){
+  case "Div" : if(num1 > num2){
     result = num1 / num2;
     alert(`Division of ${num1} and ${num2} is ${result}`);
     break;
   }else{
     alert("Number Two is larger then Number one")
   }
-  case Sub : if(num1 > num2){
+  case "Sub" : if(num1 > num2){
     result = num1 - num2;
     alert(`Subtraction of ${num1} and ${num2} is ${result}`);
     break;
   }else{
     alert("Number Two is larger then Number one")
   }
+  default : alert("Invalid input");
 }
